@@ -1,0 +1,12 @@
+# frontend/.dockerignore
+node_modules
+build
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
