@@ -11,16 +11,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', default='SK')
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
+ALLOWED_HOSTS = ['frown.ddns.net']
 
+USE_X_FORWARDED_HOST = True
 
-def debug_str_to_bool(s):
-    if s.lower() in ['true', '1']:
-        return True
-    return False
-
-
-DEBUG = debug_str_to_bool(os.getenv('DEBUG', 'True'))
+DEBUG = False
 
 
 INSTALLED_APPS = [
@@ -136,5 +131,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000'
 ]
-
-USE_X_FORWARDED_HOST = True
